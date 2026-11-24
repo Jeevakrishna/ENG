@@ -1,0 +1,51 @@
+DOCUMENT: IMFT-Architecture.pdf
+
+===== PAGE 1 =====
+IMFT Architecture Overview
+
+The Managed File Transfer (IMFT) platform provides secure and auditable file
+movement between internal banking applications and external counterparties. IMFT
+replaces unmanaged scripts with a controlled transfer service that records
+transfer metadata for every file.
+
+===== PAGE 2 =====
+Architecture
+
+IMFT is deployed as a central transfer engine with outbound and inbound agents.
+The transfer engine schedules jobs using a batch scheduler and stores transfer
+metadata in a central database.
+
+Components
+- Transfer Engine: executes outbound and inbound file transfers
+- Endpoint Agent: runs on application servers and exposes files
+- Scheduler: triggers batch transfer jobs on a fixed schedule
+- Audit Store: records transfer metadata for traceability
+
+===== PAGE 3 =====
+Integration and Configuration
+
+Applications submit transfer requests through an integration interface. The
+interface accepts a request file that names the source, the destination endpoint
+and the transfer priority.
+
+Configuration defines endpoints, credential references and retry policies. Each
+endpoint entry specifies the protocol, the host and the certificate reference.
+
+Security
+Transfers use TLS encryption with certificate based authentication. Credentials
+are resolved from a protected vault and are never written to application logs.
+
+===== PAGE 4 =====
+Monitoring and Error Handling
+
+The monitoring dashboard reports transfer metrics and raises alerts when a
+transfer job fails. Normal completion is recorded in the audit store.
+
+Error handling
+If a transfer fails, the job is retried according to the configured retry policy.
+Persistent failures are routed to a dead letter queue for operator review. The
+operator resolves the underlying error and requeues the failed transfer.
+
+Batch processing
+Transfer jobs run on a fixed schedule and each job declares dependencies on
+inbound file arrival and on the completion of upstream transfers.

@@ -1,0 +1,30 @@
+2026-11-24 14:57:14,068 INFO    acbs.catalogue: Catalogue scan complete: {'pdf_discovered': 0, 'text_discovered': 1, 'created': 1, 'updated': 0, 'duplicates': 0, 'pending_extraction': 0, 'text_available': 0, 'orphan_text': 1}
+2026-11-24 14:57:14,073 INFO    acbs.ingestion: Ingested IMFT-Architecture.txt [utf-8]: 4 page(s), 2 chunk(s)
+2026-11-24 14:57:14,095 INFO    acbs.ingestion: Ingestion complete: {'documents_processed': 1, 'documents_ingested': 1, 'documents_review': 0, 'documents_failed': 0, 'pages': 4, 'chunks': 2, 'duplicate_chunks': 0}
+2026-11-24 14:57:14,118 INFO    acbs.search: Classification complete: {'chunks_examined': 2, 'evidence_created': 8}
+2026-11-24 14:57:14,127 INFO    acbs.documentation: Wrote technology document: C:\Users\vetri\Downloads\MAIN ENG\exports\documentation\IMFT\IMFT-technical-documentation.md
+2026-11-24 14:57:14,130 INFO    acbs.documentation: Wrote cross-technology comparison: C:\Users\vetri\Downloads\MAIN ENG\exports\documentation\cross-technology-comparison.md
+2026-11-24 14:57:14,131 INFO    acbs.documentation: Wrote report: C:\Users\vetri\Downloads\MAIN ENG\exports\evidence\evidence-register.csv
+2026-11-24 14:57:14,131 INFO    acbs.documentation: Wrote report: C:\Users\vetri\Downloads\MAIN ENG\exports\reports\ingestion-report.csv
+2026-11-24 14:57:14,136 INFO    acbs.documentation: Wrote report: C:\Users\vetri\Downloads\MAIN ENG\exports\reports\extraction-readiness-report.csv
+2026-11-24 14:57:14,138 INFO    acbs.documentation: Wrote report: C:\Users\vetri\Downloads\MAIN ENG\exports\reports\quality-report.csv
+2026-11-24 14:57:14,138 INFO    acbs.documentation: Documentation generation complete.
+2026-11-24 14:57:52,123 INFO    acbs.catalogue: Catalogue scan complete: {'pdf_discovered': 0, 'text_discovered': 1, 'created': 0, 'updated': 1, 'duplicates': 0, 'pending_extraction': 0, 'text_available': 0, 'orphan_text': 1}
+2026-11-24 14:57:52,129 INFO    acbs.ingestion: Ingested IMFT-Architecture.txt [utf-8]: 4 page(s), 2 chunk(s)
+2026-11-24 14:57:52,149 INFO    acbs.ingestion: Ingestion complete: {'documents_processed': 1, 'documents_ingested': 1, 'documents_review': 0, 'documents_failed': 0, 'pages': 4, 'chunks': 2, 'duplicate_chunks': 0}
+2026-11-24 14:57:52,176 INFO    acbs.search: Classification complete: {'chunks_examined': 2, 'evidence_created': 15}
+2026-11-24 14:57:52,186 INFO    acbs.documentation: Wrote technology document: C:\Users\vetri\Downloads\MAIN ENG\exports\documentation\IMFT\IMFT-technical-documentation.md
+2026-11-24 14:57:52,188 INFO    acbs.documentation: Wrote cross-technology comparison: C:\Users\vetri\Downloads\MAIN ENG\exports\documentation\cross-technology-comparison.md
+2026-11-24 14:57:52,195 INFO    acbs.documentation: Wrote report: C:\Users\vetri\Downloads\MAIN ENG\exports\evidence\evidence-register.csv
+2026-11-24 14:57:52,196 INFO    acbs.documentation: Wrote report: C:\Users\vetri\Downloads\MAIN ENG\exports\reports\ingestion-report.csv
+2026-11-24 14:57:52,196 INFO    acbs.documentation: Wrote report: C:\Users\vetri\Downloads\MAIN ENG\exports\reports\extraction-readiness-report.csv
+2026-11-24 14:57:52,202 INFO    acbs.documentation: Wrote report: C:\Users\vetri\Downloads\MAIN ENG\exports\reports\quality-report.csv
+2026-11-24 14:57:52,202 INFO    acbs.documentation: Documentation generation complete.
+2026-11-24 14:58:10,199 INFO    acbs.documentation: Wrote technology document: C:\Users\vetri\Downloads\MAIN ENG\exports\documentation\IMFT\IMFT-technical-documentation.md
+2026-11-24 14:58:10,201 INFO    acbs.documentation: Wrote cross-technology comparison: C:\Users\vetri\Downloads\MAIN ENG\exports\documentation\cross-technology-comparison.md
+2026-11-24 14:58:10,205 INFO    acbs.documentation: Wrote report: C:\Users\vetri\Downloads\MAIN ENG\exports\evidence\evidence-register.csv
+2026-11-24 14:58:10,208 INFO    acbs.documentation: Wrote report: C:\Users\vetri\Downloads\MAIN ENG\exports\reports\ingestion-report.csv
+2026-11-24 14:58:10,211 INFO    acbs.documentation: Wrote report: C:\Users\vetri\Downloads\MAIN ENG\exports\reports\extraction-readiness-report.csv
+2026-11-24 14:58:10,214 INFO    acbs.documentation: Wrote report: C:\Users\vetri\Downloads\MAIN ENG\exports\reports\quality-report.csv
+2026-11-24 14:58:10,215 INFO    acbs.documentation: Documentation generation complete.
+2026-11-24 15:01:27,670 INFO    acbs.catalogue: Catalogue scan complete: {'pdf_discovered': 0, 'text_discovered': 1, 'created': 0, 'updated': 1, 'duplicates': 0, 'pending_extraction': 0, 'text_available': 0, 'orphan_text': 1}

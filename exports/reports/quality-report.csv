@@ -1,0 +1,14 @@
+metric,value
+documents_total,1
+pdf_documents,0
+text_documents,1
+pending_extraction,0
+ingested,1
+needs_review,0
+failed,0
+pages_total,4
+chunks_total,2
+chunks_without_page_reference,0
+evidence_total,15
+evidence_pending_review,15
+duplicate_source_documents,0

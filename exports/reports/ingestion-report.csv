@@ -1,0 +1,2 @@
+document_id,filename,technology,file_type,file_size,sha256,processing_status,text_source_path,pages,chunks,updated_at
+1,IMFT-Architecture.txt,IMFT,txt,2002,6baa7e106497f88657700e32f98995c9c5103e29d78004c417920a8bc2fa73d5,INGESTED,C:\Users\vetri\Downloads\MAIN ENG\documents\TEXT\IMFT\IMFT-Architecture.txt,4,2,2026-11-24T09:27:52+00:00
