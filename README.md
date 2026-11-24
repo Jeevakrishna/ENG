@@ -1,11 +1,4 @@
-# ACBS Knowledge Engine
-
-A local, standard-library-only Python tool that catalogues technical documentation for
-ACBS and related banking integration technologies (IMFT, Apache Airflow, Solace, IBM MQ),
-ingests available plain-text exports, indexes searchable passages, records traceable
-evidence and generates structured Markdown documentation plus CSV reports.
-
-**Dependency policy:** Python standard library only. The project runs without `pip install`.
+# Knowledge Engine
 
 ---
 
