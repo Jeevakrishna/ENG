@@ -1,3 +1,278 @@
-# The ACBS Knowledge Engine uses the Python standard library only.
-# No third-party dependencies are required. This file is intentionally empty
-# so that the project runs without any `pip install`.
+# Dummy File Transfer Testing
+## Standard Operating Procedure (SOP)
+
+**Document Type:** Technical Procedure / Testing Documentation  
+**Process:** Dummy File Transfer Testing  
+**Version:** 1.0  
+**Purpose:** To document the step-by-step procedure for executing and validating dummy file transfers across configured country environments.
+
+---
+
+## 1. Objective
+
+The objective of this procedure is to explain how to perform dummy file transfer testing using a Remote Desktop Connection, configured network directories, country-specific transfer services and the Sentinel web dashboard.
+
+This procedure covers:
+- Accessing the remote testing environment.
+- Locating source files and identifying file formats.
+- Managing country-specific transfer services.
+- Initiating dummy file transfers.
+- Verifying transfer results through log files.
+- Validating transfer completion using the web dashboard.
+- Safely disconnecting from the remote environment.
+
+## 2. Prerequisites
+
+Before starting the testing procedure, ensure that the following requirements are met:
+
+1. Valid Remote Desktop Connection credentials (username and password).
+2. Access to the designated remote testing environment.
+3. Appropriate permissions to access the required network directories.
+4. Access to the relevant country-specific FMT service.
+5. Access to the Sentinel web dashboard.
+6. A designated dummy source file for testing.
+
+**Important:** Obtain the required credentials and access permissions from the authorised administrator or team lead. Use only approved test files and directories.
+
+## 3. Procedure
+
+### Step 1: Access the Remote Desktop Environment
+
+1. Obtain the Remote Desktop username and password from the authorised administrator or team lead.
+2. Open the Windows Start menu and search for **Remote Desktop Connection**.
+3. Open the application and select **Show Options**.
+4. Enter the provided username and password in the appropriate fields.
+5. Click **Connect** to establish the remote desktop session.
+
+**Expected Result:** The remote desktop environment should open successfully.
+
+### Step 2: Access the Network Directory
+
+1. Open **File Explorer** within the remote desktop session.
+2. Navigate to the designated network directory:
+
+   `J:\Jeeva\Dummy\dummy.folder`
+
+3. Locate the available country-specific folders.
+
+   Example:
+   - Country B
+   - Country D
+   - Country F
+
+4. Open the relevant country folder to view the available dummy source files.
+
+**Note:** The directory structure and country folders may vary depending on the assigned testing environment.
+
+### Step 3: Map the Network Drive (If Required)
+
+If the required network drive is unavailable or cannot be accessed:
+
+1. Open **File Explorer**.
+2. Select **This PC**.
+3. Click the **Map Network Drive** option.
+4. Select the appropriate drive letter.
+5. Enter the network folder path provided by the team lead or administrator.
+6. Complete the mapping process and verify that the network directory is accessible.
+
+**Expected Result:** The required network drive should be visible and accessible through File Explorer.
+
+### Step 4: Select the Country and Source File
+
+1. For this testing exercise, select **Country B**.
+2. Navigate through the available files within the Country B directory.
+3. Identify the required source application or folder.
+4. For this example, select **JK Factor**.
+5. Locate the source file:
+
+   `JK FACTOR/dummy.txt`
+
+6. Identify and copy the complete source file path for the next step.
+
+**Expected Result:** The required dummy source file should be identified, and its location should be available.
+
+### Step 5: Prepare the Dummy File
+
+1. Open File Explorer.
+2. Navigate to the copied source directory.
+3. Verify whether the required dummy file exists.
+4. If the file is unavailable, create a dummy file using the required filename and extension.
+5. For this example, create:
+
+   `dummy.txt`
+
+6. Ensure that the file extension matches the expected format of the selected source file.
+
+**Note:** Use the exact filename, extension and directory structure specified for the test scenario.
+
+### Step 6: Start the Country-Specific FMT Service
+
+1. Open the Windows Start menu.
+2. Search for **Services** and open the Services application.
+3. Locate the service corresponding to the selected country.
+
+   Example:
+
+   `FMT_CountryB`
+
+4. Check the current service status.
+5. Perform the appropriate action:
+   - **If Running:** Select Restart, if required by the testing procedure.
+   - **If Stopped/Idle:** Select Start to initiate the service.
+6. Verify that the service is running before proceeding.
+
+**Expected Result:** The Country B FMT service should be active and ready to process the dummy file.
+
+**Operational Note:** Only manage the service associated with the assigned country. Do not restart or stop another country's service without proper authorisation.
+
+### Step 7: Initiate the Dummy File Transfer
+
+1. Navigate to the configured JK Factor source directory.
+2. Verify that the dummy file is available at the expected source location.
+3. Allow the active FMT service to process the configured source file.
+4. Monitor the transfer process using the designated transfer monitoring directories.
+
+For this example, the file being processed is:
+
+`JK FACTOR/dummy.txt`
+
+**Expected Result:** The dummy file should be picked up and processed by the configured FMT service.
+
+### Step 8: Verify Transfer Logs and Status Files
+
+1. Open File Explorer.
+2. Navigate to the designated monitoring directory:
+
+   `J:\Jeeva\Dummy\SINS\COS`
+
+3. Locate the country-specific monitoring files and folders.
+4. Identify the following status files for Country B:
+   - `CountryB_Transfer.sins`
+   - `CountryB_Sent.sins`
+   - `CountryB_Success.sins`
+   - `CountryB_Error.sins` (if available)
+
+5. Open `CountryB_Transfer.sins` and verify whether the file transfer has been recorded as completed.
+6. Open `CountryB_Sent.sins` and verify that the file has been successfully sent.
+7. Open `CountryB_Success.sins` and check whether the transferred file appears in the successful transfer records.
+8. If an error is reported, inspect the relevant error records to identify the failure details.
+
+**Expected Result:** The dummy file should appear in the appropriate transfer monitoring records, with successful completion reflected in the relevant status files.
+
+### Step 9: Stop the Country-Specific FMT Service
+
+After completing the transfer verification:
+
+1. Return to the Windows Services application.
+2. Locate the service used for the current testing exercise:
+
+   `FMT_CountryB`
+
+3. Select **Stop** to stop the service.
+4. Verify that the service status has changed accordingly.
+
+**Important Operational Considerations:**
+
+- Stop only the service associated with your assigned testing activity.
+- Do not stop services belonging to other users or testing activities.
+- Multiple users may work within the same remote desktop environment, subject to the environment's session configuration.
+- For example, if `FMT_CountryD` is running, it may indicate that another user is working on Country D. Do not interfere with that service.
+
+### Step 10: Validate the Transfer Using the Sentinel Web Dashboard
+
+1. Minimise the Remote Desktop Connection window.
+2. Return to the local Windows environment.
+3. Open Microsoft Edge.
+4. Navigate to the authorised Sentinel web dashboard.
+5. Review the available transfer information.
+
+The dashboard provides information such as:
+
+- Source ID
+- Flow Identifier
+- Flow Name
+- Source Application
+- Target Application
+- Filename
+- Transfer Status
+
+6. Locate the relevant search or filter fields.
+7. Enter the dummy filename in the Filename field.
+
+   Example:
+
+   `dummy.txt`
+
+8. Execute the search and review the corresponding transfer record.
+9. Verify the displayed transfer status.
+
+**Expected Result:** The dashboard should display the corresponding transfer record with the appropriate completion status.
+
+### Step 11: Verify the Final Transfer Status
+
+Review the status displayed on the Sentinel dashboard.
+
+The possible statuses observed during testing may include:
+
+- **COMPLETED:** The transfer has been completed successfully.
+- **INTERRUPTED:** The transfer has been interrupted or did not complete as expected. Further investigation is required.
+- **CANCELLED:** The transfer has been cancelled.
+
+For a successful dummy file transfer test, the expected status is:
+
+**COMPLETED**
+
+If the status is different, investigate the corresponding transfer records and error details before concluding the test.
+
+### Step 12: Disconnect the Remote Desktop Session
+
+1. Verify that the file transfer testing activity has been completed.
+2. Ensure that the country-specific FMT service has been stopped as required.
+3. Close or disconnect the Remote Desktop Connection session.
+4. Confirm that the remote session is no longer active.
+
+**Expected Result:** The testing session should be closed safely, with no unnecessary services left running.
+
+---
+
+## 4. Test Completion Checklist
+
+| No. | Verification Activity | Expected Result |
+|---|---|---|
+| 1 | Remote desktop access | Successfully connected |
+| 2 | Network directory access | Required directory accessible |
+| 3 | Country selection | Correct country selected |
+| 4 | Source file identification | Correct dummy file identified |
+| 5 | Dummy file preparation | Correct filename and extension |
+| 6 | FMT service activation | Relevant service running |
+| 7 | File transfer initiation | File picked up for processing |
+| 8 | Transfer log verification | Transfer recorded in monitoring files |
+| 9 | Success verification | File recorded in success records |
+| 10 | Service shutdown | Assigned service stopped |
+| 11 | Dashboard verification | Transfer status displayed as COMPLETED |
+| 12 | Remote session closure | Session disconnected |
+
+## 5. Troubleshooting and Observations
+
+| Issue | Recommended Action |
+|---|---|
+| Remote desktop connection fails | Verify credentials and remote access permissions |
+| Network drive unavailable | Map the network drive using the approved path |
+| Source file not found | Verify the country folder, source directory and filename |
+| FMT service is stopped | Start the appropriate country-specific service |
+| Transfer not initiated | Check the source file location and service status |
+| Transfer appears in error records | Review the corresponding error details |
+| Dashboard record unavailable | Verify the filename and relevant transfer identifiers |
+| Transfer status is INTERRUPTED or CANCELLED | Investigate the transfer records and applicable error information |
+
+## 6. Conclusion
+
+The dummy file transfer testing procedure validates the movement of a test file through the configured FMT service and its corresponding monitoring and dashboard components.
+
+Successful completion is confirmed by verifying the transfer records, checking the success monitoring files and validating the final **COMPLETED** status in the Sentinel web dashboard.
+
+This procedure provides a repeatable approach for executing and validating dummy file transfer tests in the designated testing environment.
+
+---
+
+**End of Document**
